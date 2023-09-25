@@ -3,7 +3,7 @@
 ### Mini Project 02
 
 ## Description
-Description here
+Mini Project 2 takes a data set (K-Pop Hits from 2021) and creates meaningful graphs to describe the data.
 
  ## Pip Install Instructions
 Please run the following:

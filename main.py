@@ -4,16 +4,16 @@
 
 import pandas as pd
 
-# (5/5 points) Initial comments with your name, class and project at the top of your .py file.
-
-# (5/5 points) Proper import of packages used.
-
 # (20/20 points) Using a data source of your choice, such as data from data.gov or using the Faker package, generate or
 # retrieve some data for creating basic statistics on. This will generally come in as json data, etc.
 # Think of some question you would like to solve such as:
 # "How many homes in the US have access to 100Mbps Internet or more?"
 # "How many movies that Ridley Scott directed is on Netflix?" - https://www.kaggle.com/datasets/shivamb/netflix-shows
 # Here are some other great datasets: https://www.kaggle.com/datasets
+
+data = pd.read_csv(filepath_or_buffer='KPopHits2021.csv', index_col='artist/s')
+
+print(data.head())
 
 # (10/10 points) Store this information in Pandas dataframe. These should be 2D data as a dataframe, meaning the data is
 # labeled tabular data.
@@ -33,18 +33,3 @@ import pandas as pd
 # (20/20 points) There should be a README.md file in your project that explains what your project is, how to install the
 # pip requirements, and how to execute the program. Please use the GitHub flavor of Markdown.
 # Be thorough on the explanations.
-
-
-df = pd.DataFrame (
-    {
-        "Name": [
-            "Braund, Mr. Owen Harris",
-            "Allen, Mr. William Henry",
-            "Bonnell, Miss. Elizabeth",
-        ],
-        "Age": [22, 35, 58],
-        "Sex": ["male", "male", "female"],
-    }
-)
-
-print(df['Age'])
