@@ -46,21 +46,34 @@ print(data.head())
 # graph 2
 # tempo vs danceability
 # are high tempo songs more "danceable"?
+def graph2():
+    # plot graph w/ x,y labels and title
+    data.plot(x='tempo', y='danceability', style='o')
+    plt.xlabel("Tempo")
+    plt.ylabel("Danceability")
+    plt.title("Top 50 K-POP Hits 2021 \n Tempo Vs. Danceability")
 
-#def graph2():
-#graph2()
+    # save file to charts folder
+    savefile2 = "charts/tempovsdance.png"
+    plt.savefig(savefile2)
+    plt.show()
 
 
 # graph 3
 # speechiness vs. length
 # is a song with more lyrics likely to be longer or shorter?
 
-#def graph3():
-# convert milliseconds to seconds
-# int milli = data['duration_ms'].value_counts()
-# totalsec = milli/1000
+def graph3():
+    # plot graph w/ x,y labels and title
+    data.plot(x='speechiness', y='duration_sec', style='o')
+    plt.xlabel("Speechiness")
+    plt.ylabel("Duration in Seconds")
+    plt.title("Top 50 K-POP Hits 2021 \n Speechiness Vs. Song Duration")
 
-#graph3()
+    # save file to charts folder
+    savefile3 = "charts/speechvslength.png"
+    plt.savefig(savefile3)
+    plt.show()
 
 
 
@@ -100,7 +113,7 @@ except FileExistsError:
     pass
 
 #graph1()
-#graph2()
-#graph3()
+graph2()
+graph3()
 #graph4()
 graph5()
