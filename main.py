@@ -18,16 +18,89 @@ print(data.head())
 # some fancy charts here as it will greatly help you in future homework assignments and in the final project.
 
 
-# Start of program
+# graph 1
+# bar graph male vs female
+# are there more male or female in top hits?
+#def graph1 ():
+
+#    male = data['gender'].value_counts()['male']
+#    female = data['gender'].value_counts()['female']
+#    multi = data['gender'].value_counts()['multi']
+#    plt.bar(x='male',  width=0.5, color="orange", height='30')
+#
+#    # Set the chart title and labels
+#    plt.title('Male Versus Female Top Tracks')
+#    plt.xlabel('Gender')
+#    plt.ylabel('Number of Songs')
+
+    # Saves plot
+    # savefile = "charts/gender.png"
+    # plt.savefig(savefile)
+
+    # Shows graph
+   # plt.show()
+#
+# graph1()
+
+
+# graph 2
+# tempo vs danceability
+# are high tempo songs more "danceable"?
+
+#def graph2():
+#graph2()
+
+
+# graph 3
+# speechiness vs. length
+# is a song with more lyrics likely to be longer or shorter?
+
+#def graph3():
+# convert milliseconds to seconds
+# int milli = data['duration_ms'].value_counts()
+# totalsec = milli/1000
+
+#graph3()
+
+
+
+# graph 4
+# bar graph major vs minor
+# is one more likely to be in the top 50?
+
+#def graph4():
+
+#graph4()
+
+
+
+
+
+# graph 5
+# valence vs loudness plot graph
+# is a song with higher valence ("happier") louder?
+def graph5():
+    #plot graph w/ x,y labels and title
+    data.plot(x='valence', y='loudness', style='o')
+    plt.xlabel("Valence")
+    plt.ylabel("Loudness")
+    plt.title("Top 50 K-POP Hits 2021 \n Loudness vs. Valence")
+
+    #save file to charts folder
+    savefile5 = "charts/loudvsval.png"
+    plt.savefig(savefile5)
+    plt.show()
+
+
+# Add/create folder and save graph
 try:
-    # Create our charts folder
+    # Create charts folder
     Path("charts").mkdir()
 except FileExistsError:
     pass
 
-# Saves plot
-savefile = "charts/" + ".png"
-plt.savefig(savefile)
-
-# Shows graph
-plt.show()
+#graph1()
+#graph2()
+#graph3()
+#graph4()
+graph5()
