@@ -13,34 +13,19 @@ data = pd.read_csv(filepath_or_buffer='KPopHits2021.csv', index_col='artist/s')
 
 print(data.head())
 
-
-# (10/10 points) Using matplotlib, graph this data in a way that will visually represent the data. Really try to build
-# some fancy charts here as it will greatly help you in future homework assignments and in the final project.
-
-
 # graph 1
 # bar graph male vs female
 # are there more male or female in top hits?
-#def graph1 ():
+def graph1 ():
+    plt.hist(data['gender'])
+    plt.xlabel("Gender of Singer(s)/Group")
+    plt.ylabel("Number of Times Appears in Top 50")
+    plt.title("Comparison of Top 50 Songs 2021 By Male or Female")
 
-#    male = data['gender'].value_counts()['male']
-#    female = data['gender'].value_counts()['female']
-#    multi = data['gender'].value_counts()['multi']
-#    plt.bar(x='male',  width=0.5, color="orange", height='30')
-#
-#    # Set the chart title and labels
-#    plt.title('Male Versus Female Top Tracks')
-#    plt.xlabel('Gender')
-#    plt.ylabel('Number of Songs')
-
-    # Saves plot
-    # savefile = "charts/gender.png"
-    # plt.savefig(savefile)
-
-    # Shows graph
-   # plt.show()
-#
-# graph1()
+    # save file to charts folder
+    savefile1 = "charts/gender.png"
+    plt.savefig(savefile1)
+    plt.show()
 
 
 # graph 2
@@ -62,7 +47,6 @@ def graph2():
 # graph 3
 # speechiness vs. length
 # is a song with more lyrics likely to be longer or shorter?
-
 def graph3():
     # plot graph w/ x,y labels and title
     data.plot(x='speechiness', y='duration_sec', style='o')
@@ -76,18 +60,15 @@ def graph3():
     plt.show()
 
 
-
 # graph 4
 # bar graph major [1] vs minor [0]
 # is one more likely to be in the top 50?
-
 def graph4():
     #create variable for major, minor count
-    #mode = data['mode']
     #plot graph w/ x label as major or minor, labels, titles
     plt.hist(data['mode'])
     plt.xticks([0,1])
-    plt.xlabel("Minor [0] or Major [1] Key)"
+    plt.xlabel("Minor [0] or Major [1] Key)")
     plt.ylabel("Number of Times Appears in Top 50")
     plt.title("Comparison of Top 50 Songs 2021 in Major or Minor Key")
 
@@ -95,8 +76,6 @@ def graph4():
     savefile4 = "charts/keycount.png"
     plt.savefig(savefile4)
     plt.show()
-
-
 
 
 # graph 5
@@ -122,7 +101,7 @@ try:
 except FileExistsError:
     pass
 
-#graph1()
+graph1()
 graph2()
 graph3()
 graph4()
