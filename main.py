@@ -78,13 +78,23 @@ def graph3():
 
 
 # graph 4
-# bar graph major vs minor
+# bar graph major [1] vs minor [0]
 # is one more likely to be in the top 50?
 
-#def graph4():
+def graph4():
+    #create variable for major, minor count
+    #mode = data['mode']
+    #plot graph w/ x label as major or minor, labels, titles
+    plt.hist(data['mode'])
+    plt.xticks([0,1])
+    plt.xlabel("Minor [0] or Major [1] Key)"
+    plt.ylabel("Number of Times Appears in Top 50")
+    plt.title("Comparison of Top 50 Songs 2021 in Major or Minor Key")
 
-#graph4()
-
+    # save file to charts folder
+    savefile4 = "charts/keycount.png"
+    plt.savefig(savefile4)
+    plt.show()
 
 
 
@@ -115,5 +125,5 @@ except FileExistsError:
 #graph1()
 graph2()
 graph3()
-#graph4()
+graph4()
 graph5()
